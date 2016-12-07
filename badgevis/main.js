@@ -285,7 +285,7 @@ function computeActivities(inBadges, p) {
 function compileAverageData() {
   let sortedCircles = _.sortBy(circleData, (b)=>b.idealEffort)
   var t0 = performance.now();
-  let result = computeActivities(badgeData, sortedCircles[sortedCircles.length/2].idealEffort)
+  let result = computeActivities(badgeData, sortedCircles[sortedCircles.length/2 - sortedCircles.length%2].idealEffort)
   console.log('finished showAverageData')
   console.log(result)
   visualizeLine(result)
