@@ -1,0 +1,80 @@
+<html>
+<head>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="loading.css">
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script src="http://algebra.js.org/javascripts/algebra-0.2.5.min.js"></script>
+  <script src="http://www.numericjs.com/lib/numeric-1.2.6.min.js"></script>
+  <script type="text/javascript" src="https://github.com/MatthewJA/Coffeequate/releases/download/v1.3.0/coffeequate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jstat/1.5.3/jstat.min.js"></script>
+</head>
+<body>              
+  <div class="stat">
+    <h4>Timestep</h4>
+    <span id="counter">0</span>
+    <h4>Expected <br/>Completion Time</h4>
+    <span id="expected-time">0</span>
+  </div>
+  <div id="visArea"></div>
+  <div class="row">
+  <div id="left-pane" class="input">
+    <form id="badge-form">
+      <strong>Badge <span id="badge-id-label"></span></strong> <br/><br/>
+      Reward: <span id="badge-value-label"></span><br/><br/>
+      <input id="badge-value" type="range" min="0" max="1" step="0.01"><br/><br/>
+      Position: <span id="badge-position-label"></span><br/><br/>
+      <input id="badge-position" type="range" min="1" max="120" step="1">
+    </form>
+  </div>
+  <div id="right-pane" class="input">
+    <form id="constants-form">
+      <strong>Constants</strong> <br/><br/>
+      <label for="num-people">
+        Number of People <br/>
+        <input type="number" id="num-people"><br/><br/>
+      </label>
+      <label for="num-steps">
+        Number of Steps <br/>
+        <input type="number" id="num-steps"><br/><br/>
+      </label>
+      <label for="gamma">
+        Gamma <br/>
+        <input type="number" id="gamma" min="0.0" max="1.0"><br/><br/>
+      </label>
+    </form>
+    <form id="distribution-form">
+      <strong>Effort Distribution</strong> <br/><br/>
+      <label for="mean">
+        <input type="radio" class="radio" id="normal-radio" name="distribution" value="normal" checked>
+        Normal<br/><br/>
+        Mean<input type="number" id="mean" min="0.0" max="1.0"><br/><br/>
+        Std. Dev.<input type="number" id="stdev">
+      </label>
+      <label for="alpha">
+        <input type="radio" class="radio" id="beta-radio" name="distribution" value="beta">
+        Beta<br/><br/>
+        Alpha<input type="number" id="alpha"><br/><br/>
+        Beta<input type="number" id="beta">
+      </label>
+    </form>
+    <button id="run">
+      Run Simulation
+    </button>
+    <div id="loading" style="display: none;" class="sampleContainer">
+      <div class="loader">
+        <span class="dot dot_1"></span>
+        <span class="dot dot_2"></span>
+        <span class="dot dot_3"></span>
+        <span class="dot dot_4"></span>
+      </div>
+    </div>
+  </div>
+  <script src="util.js"></script>
+  <script src="lines.js"></script>
+  <script src="timebox.js"></script>
+  <script src="circles.js"></script>
+  <script src="badges.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.stat {
+  position: absolute;
+  right: 100px;
+}
+
+.stat span {
+  font-size: 32px;
+}
+
+h4 {
+  font-size: 12px;
+  letter-spacing: 2;
+  color: rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
+}
+
+.line {
+  fill: none;
+  stroke: rgba(120,120,120,1.0);
+  stroke-width: 2px;
+  transition: stroke 0.2s;
+}
+
+.line:hover {
+  stroke: rgba(0,0,0,1.0);
+  transition: stroke 0.2s;
+}
+
+.line.nothighlight {
+  stroke: rgba(200,200,200,0.09);
+  transition: stroke 0.2s;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+.selected {
+  fill: rgb(0, 160, 255) !important;
+  fill-opacity: 0.5;
+  stroke: rgb(0, 160, 255);
+}
+
+.tooltip {
+  width: 100px;
+  height: 100px;
+  background: black;
+}
+
+div.tooltip { 
+  position: absolute;     
+  text-align: center;
+  color: rgba(255,255,255,0.95);   
+  width: 60px;          
+  height: auto;         
+  padding: 2px;       
+  font: 14px sans-serif;    
+  background: #107896; 
+  border: 0px;    
+  border-radius: 2px;
+  pointer-events: none;
+  opacity: 0.0;
+  transition: opacity 0.2s;
+}
+
+div.tooltip.active {
+  opacity: 0.95;
+  transition: opacity 0.2s; 
+}
+
+#badgeRect {
+  display: hidden;
+  fill: rgba(0, 0, 0, 0.0);
+}
+
+.badge-circle:hover {
+  cursor: pointer;
+  stroke: black;
+  stroke-width: 2;
+}
+
+.badge-selected {
+  fill: rgb(0, 160, 255) !important;
+}
+
+line.badge-selected {
+  stroke: rgb(0, 160, 255) !important;
+}
+
+.row {
+  width: 1200px;
+}
+
+.input {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 20px 24px;
+  border-radius: 8px;
+  font-size: 12px;
+  letter-spacing: 2;
+  color: rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
+}
+
+#left-pane {
+  width: 30%;
+  margin-left: 4%;
+  float:left;
+}
+
+#badge-form {
+  width: 100%;
+  text-align: center;
+}
+
+#constants-form label {
+  width: 30%;
+  margin-right: 3%;
+}
+
+input[type=range] {
+  width: 100%;
+}
+
+input[type=number] {
+  padding: 8px 4px;
+  font-size: 16px;
+  width: 100%;
+  margin-right: 4%;
+}
+
+label {
+  width: 44%;
+  margin-right: 6%;
+  float: left;
+}
+
+#run {
+  font-size: 16px;
+  padding: 6px 12px;
+  background-color: #1A9AF7;
+  color: #ffffff;
+  border: 0px;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+#run:hover {
+  cursor: pointer;
+  background-color: #4FB5FF;
+}
+
+#right-pane {
+  float: right;
+  width: 52%;
+  margin-right: 4%;
+}
