@@ -31,6 +31,7 @@ d3.select('#beta').property('value', betaBeta)
 
 var circleData
 function initCircleData() {
+  console.log(selected)
   var randomValues = []
   for(let i = 0; i < numPeople; i++) {
     randomValues[i] = selected==='normal'?jStat.normal.sample(normalMean,normalStdev) : jStat.beta.sample(betaAlpha, betaBeta)
@@ -102,6 +103,7 @@ function reset() {
   selectedBadgeId = 0
   averageLine = undefined
   progressedDataLine = undefined
+  circleData = []
 }
 
 
@@ -196,7 +198,10 @@ d3.select("#beta").on("input", function() {
 })
 
 d3.selectAll('.radio').on("click", function() {
+  console.log(this.value)
   selected = this.value
+  reset()
+  visualize()
 })
 
 d3.select('body')
